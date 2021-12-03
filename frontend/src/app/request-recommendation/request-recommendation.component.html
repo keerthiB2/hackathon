@@ -1,0 +1,45 @@
+
+<div class="container col-md-6">
+    <h1 style="color:rgb(53, 37, 37)">Request for Accommodation</h1>
+    <form (ngSubmit)="userRequest()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Interested Locality</label>
+            <input type="text" class="form-control" id="locality" name="locality" [(ngModel)]="user.locality" placeholder="Enter places nearby nanakramguda">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">Type of Stay</label>
+            <select class="form-select form-select-md mb-3" id="typeofstay" name="typeofstay" [(ngModel)]="user.typeofstay" aria-label=".form-select-lg example">
+                <option selected>Select</option>
+                <option value="family">Family</option>
+                <option value="individual">Individual</option>
+                
+              </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label slect-label">Good to have</label>
+            <select class="form-select" aria-label="Default select example" id="goodtohave" name="goodtohave" [(ngModel)]="user.goodtohave" multiple="multiple">
+                <option value="hospital">Hospital</option>
+                <option value="school">School</option>
+                <option value="Theatres">Theatres</option>
+                <option value="Parks">Parks</option>
+                <option value="malls">Shopping Malls</option>
+                
+            </select>
+            </div>
+          
+          <div class="mb-3">
+            <label for="exampleFormControlInput4" class="form-label">Distance to Office</label>
+            <select class="form-select form-select-md mb-3" id="distance" name="distance" [(ngModel)]="user.distance" aria-label=".form-select-lg example">
+                <option selected>Select</option>
+                <option value="less than 5 KM">less than 5 KM</option>
+                <option value="10 KM">10 KM</option>
+                <option value="more than 10 KM">more than 10 KM</option>
+              </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Add Additional Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" id="desc" name="desc" [(ngModel)]="user.desc" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
