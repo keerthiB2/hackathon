@@ -7,24 +7,28 @@
             <input type="text" class="form-control" id="locality" name="locality" [(ngModel)]="user.locality" placeholder="Enter places nearby nanakramguda">
           </div>
           <div class="mb-3">
+            <fieldset class="form-group">
             <label for="exampleFormControlInput2" class="form-label">Type of Stay</label>
             <select class="form-select form-select-md mb-3" id="typeofstay" name="typeofstay" [(ngModel)]="user.typeofstay" aria-label=".form-select-lg example">
                 <option selected>Select</option>
-                <option value="family">Family</option>
-                <option value="individual">Individual</option>
-                
+                <option *ngFor="let acc of acc_type" [value]="acc">
+                  {{acc}}
+                </option>
               </select>
+              </fieldset>
           </div>
           <div class="mb-3">
+            <fieldset class="form-group">
             <label for="exampleFormControlInput3" class="form-label slect-label">Good to have</label>
-            <select class="form-select" aria-label="Default select example" id="goodtohave" name="goodtohave" [(ngModel)]="user.goodtohave" multiple="multiple">
-                <option value="hospital">Hospital</option>
-                <option value="school">School</option>
-                <option value="Theatres">Theatres</option>
-                <option value="Parks">Parks</option>
-                <option value="malls">Shopping Malls</option>
+            <select (change)="update($event)" class="form-control" aria-label="Default select example" id="goodtohave" name="goodtohave" [(ngModel)]="user.goodtohave" multiple="multiple">
+                <option value="Default">select</option>
+                <option *ngFor="let amen of amenities" [value]="amen">
+                  {{amen}}
+                </option>
+                
                 
             </select>
+            </fieldset>
             </div>
           
           <div class="mb-3">
